@@ -10,7 +10,8 @@ body {
     min-height: 100vh;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #343a40;
     margin-bottom: 20px;
 }
