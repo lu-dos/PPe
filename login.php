@@ -39,5 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <input type="submit" value="Login">
     </form>
+    <ul>
+        <li><a href="acceuil.html">Retour</a></li>
+    </ul>
 </body>
 </html>
