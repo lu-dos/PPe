@@ -1,21 +1,14 @@
 <?php
-// Définir une valeur par défaut pour $error_message
 $error_message = '';
 
-// Vérifiez si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérez les valeurs du formulaire
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Ajoutez votre logique de validation ou d'authentification ici
-    // Exemple de condition pour afficher un message d'erreur
     if (empty($email) || empty($password)) {
         $error_message = 'Tous les champs sont requis.';
     } else {
-        // Effectuez l'authentification ici
-        // Par exemple : vérifiez les informations dans une base de données
-        // Si l'authentification échoue, définissez un message d'erreur approprié
         $error_message = 'Identifiants invalides.';
     }
 }
