@@ -1,4 +1,7 @@
 <?php
+session_start();
+include 'db.php';
+
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
