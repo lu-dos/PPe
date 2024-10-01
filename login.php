@@ -26,6 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 </head>
 <body>  
+<div class="navbar">
+        <div class="links">
+            <a href="acceuil.html">Accueil</a>
+            <a href="#">Réserver un Terrain</a>
+            <a href="contact.php">Contacter le Créateur</a>
+        </div>
+        <a href="login.php">Se Connecter</a>
+    </div>
+
     <?php if ($error_message): ?>
         <div class="alert alert-danger">
             <?php echo htmlspecialchars($error_message, ENT_QUOTES, 'UTF-8'); ?>
