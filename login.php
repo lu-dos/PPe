@@ -39,11 +39,6 @@ if ($query = $conn->prepare("SELECT id, Role, mot_de_passe FROM clients WHERE em
 }
 ?>
 
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
