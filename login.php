@@ -23,7 +23,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
-    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Space between left and right content */
+            align-items: center;
+        }
+        .navbar .links {
+            display: flex;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>  
 <div class="navbar">
