@@ -9,7 +9,7 @@
 <body>
 <div class="navbar">
         <div class="links">
-            <a href="#">Accueil</a>
+            <a href="acceuil.html">Accueil</a>
             <a href="#">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>
