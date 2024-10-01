@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Inscription</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
 </head>
 
