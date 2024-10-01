@@ -5,17 +5,44 @@ include 'db.php';
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (empty($email) || empty($password)) {
-        $error_message = 'Tous les champs sont requis.';
+
+
+if ($query = $conn->prepare("SELECT id, Role, mot_de_passe FROM clients WHERE email = ?")) {
+    $query->bind_param('s', $email);
+    $query->execute();
+    $query->store_result();
+    
+    if ($query->num_rows == 1) {
+        $query->bind_result($user_id, $role, $stored_hashed_password);
+        $query->fetch();
+        $hashed_password = md5($password);
+
+        if ($hashed_password === $stored_hashed_password) {
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['role'] = $role;
+            header("Location: acceuil.html");
+            exit();
+        } else {
+            $error_message = "Mot de passe invalide.";
+        }
     } else {
-        $error_message = 'Identifiants invalides.';
+        $error_message = "Mail inconnu.";
     }
+
+    $query->close();
+} else {
+    $error_message = "Erreur lors de la préparation de la requête: " . $conn->error;
+}
 }
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html>
