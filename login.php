@@ -98,5 +98,6 @@ if ($query = $conn->prepare("SELECT id, Role, mot_de_passe FROM clients WHERE em
     <ul>
         <li><a href="acceuil.html">Retour</a></li>
     </ul>
+
 </body>
 </html>

@@ -15,7 +15,7 @@
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
+            justify-content: space-between; /* Espace dans la bande */
             align-items: center;
         }
         .navbar .links {
