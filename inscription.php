@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-
-<html>
-
+<html lang="fr">
 <head>
-    <title>Inscription</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez le créateur</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
 </head>
-
 <body>
-    <?php if ($error_message): ?>
-        <div class="alert alert-danger">
-            <?php echo ($error_message) ?>
-        </div>
-    <?php endif; ?>
 
-    <form method="POST" action="login.php">
-        <div>
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" required>
-        </div>
-        <div>
-            <label for="password" class="form-label">Mot de passe</label>
-            <input type="password" name="password" class="form-control" id="password" required>
-        </div>
-        <input type="submit" value="Login">
+    <h2>Contactez-nous</h2>
+    <form action="mailto:ludorouge7@gmail.com" method="post" enctype="text/plain">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="Votre email">
+        <br><br>
+
+        <label for="subject">Objet *</label>
+        <input type="text" id="subject" name="subject" required placeholder="Objet de votre message">
+        <br><br>
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Votre message"></textarea>
+        <br><br>
+
+        <button type="submit">Envoyer</button>
     </form>
-</body>
 
+</body>
 </html>
