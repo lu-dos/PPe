@@ -36,7 +36,33 @@
         </div>
         <a href="login.php">Se Connecter</a>
     </div>
-    
+
+    <script>
+      // Initialiser la carte
+      var map = L.map('map').setView([48.80, 5.68], 8);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+      }).addTo(map);
+
+      gymnases.forEach(function(gymnase) {
+          var popupContent = `<b>${gymnase.name}</b><br>${gymnase.address}<br>${gymnase.Ville}<br>${gymnase.Zip}`;
+          <?php if ($connect->isAdmin()): ?>
+              popupContent += `
+                  <form method="POST" action="main.php">
+                      <input type="hidden" name="action" value="edit_gymnase">
+                      <input type="hidden" name="gymid" value="${gymnase.idgym}">
+                      <input type="submit" value="Paramètre">
+                  </form>
+              `;
+          <?php endif; ?>
+
+      
+
+          L.marker([gymnase.latitude, gymnase.longitude]).addTo(map)
+              .bindPopup(popupContent);
+      });
+      
     <ul>
         <li><a href="acceuil.html">Retour</a></li>
     </ul>
