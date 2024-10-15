@@ -9,12 +9,12 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Requête pour récupérer tous les terrains
+    // requete pour recup tous les terrains
     $sql = "SELECT * FROM terrain";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
-    // Récupérer les résultats
+    // recup des resultats 
     $terrains = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
@@ -75,7 +75,6 @@ try {
     <!-- Carte -->
     <div id="map"></div>
 
-    <!-- Table des terrains -->
     <table>
         <thead>
             <tr>
@@ -96,8 +95,8 @@ try {
                     <td><?= htmlspecialchars($terrain['etat']) ?></td>
                     <td><?= htmlspecialchars($terrain['note']) ?></td>
                     <td>
-                        <a href="modifier.php?id=<?= $terrain['id_Terrain'] ?>">Modifier</a> | 
-                        <a href="supprimer.php?id=<?= $terrain['id_Terrain'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce terrain ?')">Supprimer</a>
+                        <a href="modifier.php?id=<?= $terrain['Id_Terrain'] ?>">Modifier</a> | 
+                        <a href="supprimer.php?id=<?= $terrain['Id_Terrain'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce terrain ?')">Supprimer</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -106,7 +105,7 @@ try {
 
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
-        // Initialiser la carte
+        // initialisation de la carte 
         var map = L.map('map').setView([48.6921, 6.1844], 10);
 
         // Ajouter la couche OpenStreetMap
@@ -114,7 +113,7 @@ try {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Ajouter des marqueurs pour chaque terrain
+        // ajout des marqueurs pour chaque terrain
         var terrains = <?= json_encode($terrains) ?>;
         terrains.forEach(function(terrain) {
             L.marker([terrain.latitude, terrain.longitude])
