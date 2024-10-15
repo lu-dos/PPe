@@ -81,6 +81,8 @@ try {
                 <th>Type</th>
                 <th>État</th>
                 <th>Note</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -92,6 +94,8 @@ try {
                     <td><?= htmlspecialchars($terrain['type_terrain']) ?></td>
                     <td><?= htmlspecialchars($terrain['etat']) ?></td>
                     <td><?= htmlspecialchars($terrain['note']) ?></td>
+                    <td><?= htmlspecialchars($terrain['latitude']) ?></td>
+                    <td><?= htmlspecialchars($terrain['longitude']) ?></td>
                     <td>
                         <a href="modifier.php?id=<?= $terrain['Id_Terrain'] ?>">Modifier</a> | 
                         <a href="supprimer.php?id=<?= $terrain['Id_Terrain'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce terrain ?')">Supprimer</a>
