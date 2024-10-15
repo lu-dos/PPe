@@ -35,7 +35,7 @@
             <a href="reservation.php">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>
-        <a href="login.php">Se Connecter</a>
+        <a href="login.html">Se Connecter</a>
     </div>
 
     <h2>Contactez-nous</h2>

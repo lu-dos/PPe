@@ -41,7 +41,7 @@
             <a href="#">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>
-        <a href="login.php">Se Connecter</a>
+        <a href="login.html">Se Connecter</a>
     </div>
 
     <!-- Map container -->
