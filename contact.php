@@ -6,7 +6,7 @@
     <title>Contactez le créateur</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
     <style>
-    body {
+        body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -15,16 +15,24 @@
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Espace dans la bande */
+            justify-content: space-between; /* Space between left and right content */
             align-items: center;
+            width: 100%; /* Assurer que la barre de navigation prend toute la largeur */
+            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
         }
         .navbar .links {
             display: flex;
+            justify-content: center; /* Centrer les liens dans la navbar */
         }
         .navbar a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+        }
+        /* Style for the map */
+        #map {
+            height: 600px;
+            width: 100%;
         }
     </style>
 </head>
