@@ -32,7 +32,7 @@
 <div class="navbar">
         <div class="links">
             <a href="acceuil.html">Accueil</a>
-            <a href="#">Réserver un Terrain</a>
+            <a href="reservation.php">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>
         <a href="login.php">Se Connecter</a>

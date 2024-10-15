@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "spe";
+$dbname = "tablepetanque";
 
 $conn = new mysqli(hostname: $servername, username: $username, password: $password, database: $dbname);
 
