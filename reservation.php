@@ -1,10 +1,38 @@
+<?php
+// Connexion à la base de données
+$host = 'localhost';
+$dbname = 'tablepetanque';
+$username = 'root';  // Modifier selon tes infos
+$password = '';      // Modifier selon tes infos
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Requête pour récupérer tous les terrains
+    $sql = "SELECT * FROM terrain";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    // Récupérer les résultats
+    $terrains = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+}
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Réservation de Terrain</title>
-    <link rel="stylesheet" type="text/css" href="rstyle.css">
+    <link rel="stylesheet" href="rstyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <style>
+        #map { height: 600px; width: 100%; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 10px; text-align: left; }
         body {
             margin: 0;
             padding: 0;
@@ -34,50 +62,65 @@
             width: 100%;
         }
     </style>
-    <!-- Leaflet.js CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
-<body>  
-    <div class="navbar">
+<body>
+<div class="navbar">
         <div class="links">
             <a href="acceuil.html">Accueil</a>
-            <a href="#">Réserver un Terrain</a>
+            <a href="reservation.php">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>
         <a href="login.html">Se Connecter</a>
     </div>
-
-    <!-- Map container -->
+    <!-- Carte -->
     <div id="map"></div>
 
-    <!-- Leaflet.js JavaScript -->
+    <!-- Table des terrains -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du Terrain</th>
+                <th>Ville</th>
+                <th>Type</th>
+                <th>État</th>
+                <th>Note</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($terrains as $terrain): ?>
+                <tr>
+                    <td><?= htmlspecialchars($terrain['nom_terrain']) ?></td>
+                    <td><?= htmlspecialchars($terrain['ville']) ?></td>
+                    <td><?= htmlspecialchars($terrain['type_terrain']) ?></td>
+                    <td><?= htmlspecialchars($terrain['etat']) ?></td>
+                    <td><?= htmlspecialchars($terrain['note']) ?></td>
+                    <td>
+                        <a href="modifier.php?id=<?= $terrain['id_Terrain'] ?>">Modifier</a> | 
+                        <a href="supprimer.php?id=<?= $terrain['id_Terrain'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce terrain ?')">Supprimer</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
-        // Initialiser la carte et définir la vue centrée sur une position en Lorraine
-        var map = L.map('map').setView([48.6921, 6.1844], 10); // Coordonnées pour la région Lorraine
+        // Initialiser la carte
+        var map = L.map('map').setView([48.6921, 6.1844], 10);
 
-        // Ajouter une couche de tuiles à partir d'OpenStreetMap
+        // Ajouter la couche OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Ajouter des marqueurs pour les terrains de pétanque en Lorraine
-        var terrains = [
-            {lat: 48.6921, lng: 6.1844, name: "Terrain 1 - Nancy"},
-            {lat: 49.1193, lng: 6.1757, name: "Terrain 2 - Metz"},
-            {lat: 48.6741, lng: 6.1561, name: "Terrain 3 - Lunéville"},
-            {lat: 48.8439, lng: 5.9581, name: "Terrain 4 - Pont-à-Mousson"},
-            {lat: 48.6546, lng: 6.1667, name: "Terrain 5 - Toul"}
-        ];
-
+        // Ajouter des marqueurs pour chaque terrain
+        var terrains = <?= json_encode($terrains) ?>;
         terrains.forEach(function(terrain) {
-            L.marker([terrain.lat, terrain.lng]).addTo(map)
-                .bindPopup(terrain.name);
+            L.marker([terrain.latitude, terrain.longitude])
+                .addTo(map)
+                .bindPopup(terrain.nom_terrain);
         });
     </script>
-
-    <ul>
-        <li><a href="acceuil.html">Retour</a></li>
-    </ul>
 </body>
 </html>
