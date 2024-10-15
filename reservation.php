@@ -62,7 +62,7 @@
           L.marker([gymnase.latitude, gymnase.longitude]).addTo(map)
               .bindPopup(popupContent);
       });
-      
+      </script>
     <ul>
         <li><a href="acceuil.html">Retour</a></li>
     </ul>
