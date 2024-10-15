@@ -43,12 +43,11 @@ try {
             display: flex;
             justify-content: space-between; /* espace entre droite et gauche */
             align-items: center;
-            width: 100%; /* Assurer que la barre de navigation prend toute la largeur */
-            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+            width: 100%; /* pour que barre de navigation prenne toute la largeur */
         }
         .navbar .links {
             display: flex;
-            justify-content: center; /* Centrer les liens dans la navbar */
+            justify-content: center; /* centrer les liens dans la barre */
         }
         .navbar a {
             color: white;
