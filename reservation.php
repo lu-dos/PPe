@@ -1,9 +1,8 @@
 <?php
-// Connexion à la base de données
 $host = 'localhost';
 $dbname = 'tablepetanque';
-$username = 'root';  // Modifier selon tes infos
-$password = '';      // Modifier selon tes infos
+$username = 'root'; 
+$password = '';      
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -42,7 +41,7 @@ try {
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
+            justify-content: space-between; /* espace entre droite et gauche */
             align-items: center;
             width: 100%; /* Assurer que la barre de navigation prend toute la largeur */
             box-sizing: border-box; /* Inclure le padding dans la largeur totale */
