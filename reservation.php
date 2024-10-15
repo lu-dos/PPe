@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Reservation</title>
+    <title>Réservation de Terrain</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
     <style>
         body {
@@ -25,10 +25,17 @@
             margin: 0 15px;
             text-decoration: none;
         }
+        /* Style for the map */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
     </style>
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>  
-<div class="navbar">
+    <div class="navbar">
         <div class="links">
             <a href="acceuil.html">Accueil</a>
             <a href="#">Réserver un Terrain</a>
@@ -37,35 +44,37 @@
         <a href="login.php">Se Connecter</a>
     </div>
 
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Leaflet.js JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
-      // Initialiser la carte
-      var map = L.map('map').setView([48.80, 5.68], 8);
+        // Initialiser la carte et définir la vue centrée sur une position en Lorraine
+        var map = L.map('map').setView([48.6921, 6.1844], 10); // Coordonnées pour la région Lorraine
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-      }).addTo(map);
+        // Ajouter une couche de tuiles à partir d'OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-      gymnases.forEach(function(gymnase) {
-          var popupContent = `<b>${gymnase.name}</b><br>${gymnase.address}<br>${gymnase.Ville}<br>${gymnase.Zip}`;
-          <?php if ($connect->isAdmin()): ?>
-              popupContent += `
-                  <form method="POST" action="main.php">
-                      <input type="hidden" name="action" value="edit_gymnase">
-                      <input type="hidden" name="gymid" value="${gymnase.idgym}">
-                      <input type="submit" value="Paramètre">
-                  </form>
-              `;
-          <?php endif; ?>
+        // Ajouter des marqueurs pour les terrains de pétanque en Lorraine
+        var terrains = [
+            {lat: 48.6921, lng: 6.1844, name: "Terrain 1 - Nancy"},
+            {lat: 49.1193, lng: 6.1757, name: "Terrain 2 - Metz"},
+            {lat: 48.6741, lng: 6.1561, name: "Terrain 3 - Lunéville"},
+            {lat: 48.8439, lng: 5.9581, name: "Terrain 4 - Pont-à-Mousson"},
+            {lat: 48.6546, lng: 6.1667, name: "Terrain 5 - Toul"}
+        ];
 
-      
+        terrains.forEach(function(terrain) {
+            L.marker([terrain.lat, terrain.lng]).addTo(map)
+                .bindPopup(terrain.name);
+        });
+    </script>
 
-          L.marker([gymnase.latitude, gymnase.longitude]).addTo(map)
-              .bindPopup(popupContent);
-      });
-      </script>
-    <ul>
+<ul>
         <li><a href="acceuil.html">Retour</a></li>
     </ul>
-
 </body>
 </html>
