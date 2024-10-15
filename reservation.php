@@ -105,8 +105,15 @@ try {
         </tbody>
     </table>
 
+    <!-- Bouton Ajouter -->
+<div style="margin-top: 20px;">
+    <a href="ajouter.php" style="padding: 10px 15px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">Ajouter un Terrain</a>
+</div>
+
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
+
+        
         // initialisation de la carte 
         var map = L.map('map').setView([48.6921, 6.1844], 10);
 
