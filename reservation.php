@@ -130,5 +130,9 @@ try {
                 .bindPopup(terrain.nom_terrain);
         });
     </script>
+
+    <ul>
+        <li><a href="acceuil.html">Retour</a></li>
+    </ul>
 </body>
 </html>

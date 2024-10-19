@@ -42,9 +42,65 @@ try {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="rstyle.css">
     <title>Ajouter un Terrain</title>
 </head>
 <body>
+
+<div class="navbar">
+        <div class="links">
+            <a href="acceuil.html">Accueil</a>
+            <a href="reservation.php">Réserver un Terrain</a>
+            <a href="contact.php">Contacter le Créateur</a>
+        </div>
+        <a href="login.html">Se Connecter</a>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Space between left and right content */
+            align-items: center;
+        }
+        .navbar .links {
+            display: flex;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .video-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .video-section h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .video-container {
+            display: inline-block; /* Align the container inline */
+            width: 70%; /* Set a width for the video */
+            max-width: 800px; /* Limit the maximum width */
+            border: 5px solid #333; /* Add border */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px; /* Set height of the video */
+            border: 0;
+        }
+    </style>
+
     <h1>Ajouter un Terrain</h1>
     <form method="POST">
         <label>Nom du Terrain:</label>
@@ -70,5 +126,9 @@ try {
         
         <button type="submit">Ajouter Terrain</button>
     </form>
+
+    <ul>
+        <li><a href="reservation.php">Retour</a></li>
+    </ul>
 </body>
 </html>
