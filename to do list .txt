@@ -1,0 +1,9 @@
+-Faire un bouton "s'inscrire"
+
+-Si on est pas connecté et qu'on veut réserver un terrain, faire en sorte qu'il nous connecte (si admin on peut ajouter, sinon, juste réserver"
+
+-Paire une page des réservations
+
+-Par rapport au compte
+
+-Mettre la vidéo en local pour éviter de la perdre si elle se fait ban 
