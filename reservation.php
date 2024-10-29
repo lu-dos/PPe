@@ -69,6 +69,7 @@ try {
             <a href="contact.php">Contacter le Créateur</a>
         </div>
         <a href="login.html">Se Connecter</a>
+        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
     </div>
     <!-- Carte -->
     <div id="map"></div>

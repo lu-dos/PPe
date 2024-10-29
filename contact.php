@@ -44,6 +44,7 @@
             <a href="contact.php">Contacter le Créateur</a>
         </div>
         <a href="login.html">Se Connecter</a>
+        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
     </div>
 
     <h2>Contactez-nous</h2>
