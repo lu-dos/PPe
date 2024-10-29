@@ -39,7 +39,7 @@ try {
         $stmt->execute();
 
         echo "<p>Inscription réussie !</p>";
-        echo '<a href="accuueil.html"><button>Retour à l\'accueil</button></a>';
+        echo '<a href="accueil.html"><button>Retour à l\'accueil</button></a>';
     }
 } catch(PDOException $e) {
     echo "Erreur : " . $e->getMessage();
