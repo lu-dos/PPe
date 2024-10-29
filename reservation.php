@@ -133,7 +133,7 @@ try {
     </script>
 
     <ul>
-        <li><a href="acceuil.html">Retour</a></li>
+        <li><a href="accueil.html">Retour</a></li>
     </ul>
 </body>
 </html>
