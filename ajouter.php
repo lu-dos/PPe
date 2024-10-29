@@ -88,16 +88,16 @@ try {
             margin-bottom: 10px;
         }
         .video-container {
-            display: inline-block; /* Align the container inline */
-            width: 70%; /* Set a width for the video */
-            max-width: 800px; /* Limit the maximum width */
-            border: 5px solid #333; /* Add border */
-            border-radius: 10px; /* Rounded corners */
+            display: inline-block; 
+            width: 70%; 
+            max-width: 800px; 
+            border: 5px solid #333; 
+            border-radius: 10px; 
             overflow: hidden;
         }
         .video-container iframe {
             width: 100%;
-            height: 450px; /* Set height of the video */
+            height: 450px; 
             border: 0;
         }
     </style>
@@ -117,7 +117,7 @@ try {
         <input type="text" name="etat" required><br>
         
         <label>Note:</label>
-        <input type="number" step="0.1" name="note" required><br>
+        <input type="number" step="0.5" name="note" required><br>
         
         <label>Latitude:</label>
         <input type="text" name="latitude" required><br>

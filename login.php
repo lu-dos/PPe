@@ -39,6 +39,17 @@ if ($query = $conn->prepare("SELECT Id_utilisateur, mot_de_passe FROM utilisateu
 }
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +66,6 @@ if ($query = $conn->prepare("SELECT Id_utilisateur, mot_de_passe FROM utilisateu
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
             align-items: center;
         }
         .navbar .links {
@@ -101,4 +111,3 @@ if ($query = $conn->prepare("SELECT Id_utilisateur, mot_de_passe FROM utilisateu
 
 </body>
 </html>
-

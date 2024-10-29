@@ -1,9 +1,9 @@
 <?php
-// Connexion à la base de données
-$host = "localhost"; // Adresse du serveur
-$dbname = "tablepetanque"; // Nom de la base de données
-$username = "root"; // Nom d'utilisateur
-$password = ""; // Mot de passe
+
+$host = "localhost"; 
+$dbname = "tablepetanque"; 
+$username = "root"; 
+$password = "";
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

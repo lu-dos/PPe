@@ -53,7 +53,6 @@ try {
             margin: 0 15px;
             text-decoration: none;
         }
-        /* Style for the map */
         #map {
             height: 600px;
             width: 100%;
