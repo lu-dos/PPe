@@ -85,7 +85,7 @@ try {
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
+            width: 100%;
             align-items: center;
         }
         .navbar .links {

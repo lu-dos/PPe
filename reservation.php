@@ -41,7 +41,6 @@ try {
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* espace entre droite et gauche */
             align-items: center;
             width: 100%; /* pour que barre de navigation prenne toute la largeur */
         }

@@ -15,7 +15,6 @@
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
             align-items: center;
             width: 100%; /* Assurer que la barre de navigation prend toute la largeur */
             box-sizing: border-box; /* Inclure le padding dans la largeur totale */

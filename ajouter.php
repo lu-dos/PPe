@@ -54,6 +54,7 @@ try {
             <a href="contact.php">Contacter le Créateur</a>
         </div>
         <a href="login.html">Se Connecter</a>
+        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
     </div>
 
     <style>
@@ -66,7 +67,7 @@ try {
             background-color: #333;
             padding: 10px;
             display: flex;
-            justify-content: space-between; /* Space between left and right content */
+            width: 100%;
             align-items: center;
         }
         .navbar .links {
