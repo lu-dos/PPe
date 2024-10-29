@@ -96,7 +96,7 @@ if ($query = $conn->prepare("SELECT Id_utilisateur, mot_de_passe FROM utilisateu
         <input type="submit" value="Login">
     </form>
     <ul>
-        <li><a href="acceuil.html">Retour</a></li>
+        <li><a href="accueil.html">Retour</a></li>
     </ul>
 
 </body>
