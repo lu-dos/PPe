@@ -1,9 +1,18 @@
+-Faire un bouton "s'inscrire" qui nous emmène sur une page ou on doit rentrer nom, prénom, mail,  
+
+-Si on est pas connecté et qu'on veut aller sur "réserver un terrain" ou "contacter le créateur", faire en sorte qu'il nous connecte (si admin on peut ajouter, sinon, juste réserver"
+
 -Faire un bouton "s'inscrire"
 
--Si on est pas connecté et qu'on veut réserver un terrain, faire en sorte qu'il nous connecte (si admin on peut ajouter, sinon, juste réserver"
+-Faire un bouton "réserver" 
 
--Paire une page des réservations
-
--Par rapport au compte
+-Paire une page "réservations" qui montre les réservations des terrains par rapport au compte
 
 -Mettre la vidéo en local pour éviter de la perdre si elle se fait ban 
+
+-Modifier l'en-tête de ajouter et modifier dans "reserver un terrain" enlever longitude / latitude et remplacer par l'adresse 
+
+-Ajouter des infos quand on clique sur un terrain.
+
+-Limiter la note / 20
+

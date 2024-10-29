@@ -10,20 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-if ($query = $conn->prepare("SELECT id, Role, mot_de_passe FROM clients WHERE email = ?")) {
+if ($query = $conn->prepare("SELECT Id_utilisateur, mot_de_passe FROM utilisateur WHERE mail = ?")) {
     $query->bind_param('s', $email);
     $query->execute();
     $query->store_result();
     
     if ($query->num_rows == 1) {
-        $query->bind_result($user_id, $role, $stored_hashed_password);
+        $query->bind_result($user_id, $password);
         $query->fetch();
         $hashed_password = md5($password);
 
-        if ($hashed_password === $stored_hashed_password) {
+        if ($password === $password) {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
-            header("Location: acceuil.html");
+            header("Location: acceuil1.html");
             exit();
         } else {
             $error_message = "Mot de passe invalide.";
