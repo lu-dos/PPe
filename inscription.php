@@ -16,20 +16,34 @@ try {
     $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hash du mot de passe
     $ville = $_POST['ville'];
 
-    // Insertion dans la base de données
-    $sql = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe, ville, grade) VALUES (:nom, :prenom, :email, :mot_de_passe, :ville, 'client')";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':nom', $nom);
-    $stmt->bindParam(':prenom', $prenom);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':mot_de_passe', $mot_de_passe);
-    $stmt->bindParam(':ville', $ville);
+    // Vérification si l'email existe déjà
+    $checkEmailQuery = "SELECT * FROM utilisateur WHERE mail = :email";
+    $checkStmt = $conn->prepare($checkEmailQuery);
+    $checkStmt->bindParam(':email', $email);
+    $checkStmt->execute();
 
-    $stmt->execute();
+    if ($checkStmt->rowCount() > 0) {
+        // Si le compte existe déjà
+        echo "<p>Le compte avec cet email existe déjà.</p>";
+        echo '<a href="inscription.html"><button>Retour à l\'inscription</button></a>';
+    } else {
+        // Insertion dans la base de données
+        $sql = "INSERT INTO utilisateur (nom, prenom, mail, mot_de_passe, ville, grade) VALUES (:nom, :prenom, :email, :mot_de_passe, :ville, 'client')";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':mot_de_passe', $mot_de_passe);
+        $stmt->bindParam(':ville', $ville);
 
-    echo "Inscription réussie !";
+        $stmt->execute();
+
+        echo "<p>Inscription réussie !</p>";
+        echo '<a href="accuueil.html"><button>Retour à l\'accueil</button></a>';
+    }
 } catch(PDOException $e) {
     echo "Erreur : " . $e->getMessage();
+    echo '<a href="inscription.html"><button>Retour à l\'inscription</button></a>';
 }
 
 $conn = null;

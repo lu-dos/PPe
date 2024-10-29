@@ -39,7 +39,7 @@
 <body>
 <div class="navbar">
         <div class="links">
-            <a href="acceuil.html">Accueil</a>
+            <a href="accueil.html">Accueil</a>
             <a href="reservation.php">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         </div>

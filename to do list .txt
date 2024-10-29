@@ -10,9 +10,10 @@
 
 -Mettre la vidéo en local pour éviter de la perdre si elle se fait ban 
 
--Modifier l'en-tête de ajouter et modifier dans "reserver un terrain" enlever longitude / latitude et remplacer par l'adresse 
+-Modifier l'en-tête de ajouter et modifier dans "réserver un terrain" enlever longitude / latitude et remplacer par l'adresse 
 
 -Ajouter des infos quand on clique sur un terrain.
 
 -Limiter la note / 20
 
+-Tous les marqueurs doivent etre visible au chargement de la page 
