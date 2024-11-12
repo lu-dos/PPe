@@ -8,7 +8,7 @@
     </div>
     <?php if (!isset($_SESSION['IsClient']) && !isset($_SESSION['IsAdmin'])): ?>
         <a href="login.php" class="btn-connexion">Se Connecter</a>
-        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
+        <a href="inscription.php" class="btn-inscription">S'inscrire</a>
     <?php else: ?>
         <form action="deconnexion.php" method="POST" style="display:inline;">
             <button type="submit" class="logout-button">Se Déconnecter</button>

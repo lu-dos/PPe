@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['isClient'] = $isClient;
                 $_SESSION['isAdmin'] = $isAdmin;
-                header("Location: acceuil1.html");
+                header("Location: accueil.php");
                 exit();
             } else {
                 $error_message = "Mot de passe invalide.";
