@@ -18,6 +18,8 @@
 
 -Limiter la note / 20
 
--Tous les marqueurs doivent etre visible au chargement de la page 
+-Tous les marqueurs doivent être visible au chargement de la page 
 
 -Arranger la barre des taches
+
+-Ajouter/Modifier un terrain en mettant des adresse irl
