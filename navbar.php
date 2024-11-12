@@ -43,4 +43,26 @@
         cursor: pointer;
         color: white;
         }
+/* CSS pour la barre de navigation */
+nav {
+    background-color: #333; /* Couleur de fond de la barre */
+    width: 100%; /* Étendre la barre sur toute la largeur */
+    display: flex;
+    justify-content: space-around; /* Espacement égal entre les éléments */
+    padding: 1em 0; /* Ajout de padding vertical */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    background-color: #555; /* Changement de couleur au survol */
+    border-radius: 5px;
+}
+
+
     </style>

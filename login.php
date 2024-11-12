@@ -46,10 +46,10 @@
         <input type="submit" value="Login">
     </form>
     <ul>
-        <li><a href="inscription.html">S'inscrire</a></li>
+        <li><a href="inscription.php">S'inscrire</a></li>
     </ul>
     <ul>
-        <li><a href="accueil.html">Retour</a></li>
+        <li><a href="accueil.php">Retour</a></li>
     </ul>
 </body>
 </html>
