@@ -47,60 +47,7 @@ try {
 </head>
 <body>
 
-<div class="navbar">
-        <div class="links">
-            <a href="accueil.html">Accueil</a>
-            <a href="reservation.php">Réserver un Terrain</a>
-            <a href="contact.php">Contacter le Créateur</a>
-        </div>
-        <a href="login.html">Se Connecter</a>
-        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
-    </div>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-            display: flex;
-            width: 100%;
-            align-items: center;
-        }
-        .navbar .links {
-            display: flex;
-        }
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .video-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .video-section h2 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .video-container {
-            display: inline-block; 
-            width: 70%; 
-            max-width: 800px; 
-            border: 5px solid #333; 
-            border-radius: 10px; 
-            overflow: hidden;
-        }
-        .video-container iframe {
-            width: 100%;
-            height: 450px; 
-            border: 0;
-        }
-    </style>
+<?php include 'navbar.php'; ?>
 
     <h1>Ajouter un Terrain</h1>
     <form method="POST">

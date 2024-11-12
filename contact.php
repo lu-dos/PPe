@@ -35,15 +35,7 @@
     </style>
 </head>
 <body>
-<div class="navbar">
-        <div class="links">
-            <a href="accueil.html">Accueil</a>
-            <a href="reservation.php">Réserver un Terrain</a>
-            <a href="contact.php">Contacter le Créateur</a>
-        </div>
-        <a href="login.html">Se Connecter</a>
-        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
-    </div>
+<?php include 'navbar.php'; ?>
 
     <h2>Contactez-nous</h2>
     <form action="mailto:ludorouge7@gmail.com" method="post" enctype="text/plain">

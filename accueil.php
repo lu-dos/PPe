@@ -7,37 +7,9 @@
     
 </head>
 <body>
-
-    <div class="navbar">
-        <div class="links">
-            <a href="accueil.html">Accueil</a>
-            <a href="reservation.php">Réserver un Terrain</a>
-            <a href="contact.php">Contacter le Créateur</a>
-        </div>
-        <a href="login.html" class="btn-connenxion">Se Connecter</a>
-        <a href="inscription.html" class="btn-inscription">S'inscrire</a>
-    </div>
-
+    <?php include 'navbar.php'; ?>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-        }
-        .navbar .links {
-            display: flex;
-        }
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+     
         .video-section {
             text-align: center;
             margin-top: 20px;
