@@ -1,60 +1,29 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="rstyle.css">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            width: 100%; /* Assurer que la barre de navigation prend toute la largeur */
-            box-sizing: border-box; /* Inclure le padding dans la largeur totale */
-        }
-        .navbar .links {
-            display: flex;
-            justify-content: center; /* Centrer les liens dans la navbar */
-        }
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        #map {
-            height: 600px;
-            width: 100%;
-        }
-    </style>
-
 </head>
 <body>
 <?php include 'navbar.php'; ?>
-    <h1></h1>
-    <form method="POST" action="login.php">
-        Email: <input type="email" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
-        <input type="submit" value="Login">
-    </form>
-    <ul>
-        <li><a href="inscription.php">S'inscrire</a></li>
-    </ul>
-    <ul>
-        <li><a href="accueil.php">Retour</a></li>
-    </ul>
+<h1>Connexion</h1>
+<form method="POST" action="login.php">
+    Email: <input type="email" name="email" required><br>
+    Password: <input type="password" name="password" required><br>
+    <input type="submit" value="Login">
+</form>
+<ul>
+    <li><a href="inscription.php">S'inscrire</a></li>
+    <li><a href="accueil.php">Retour</a></li>
+</ul>
+
+<?php if (!empty($error_message)): ?>
+    <p style="color: red;"><?php echo $error_message; ?></p>
+<?php endif; ?>
 </body>
 </html>
-
-
 
 <?php
 session_start();
@@ -98,4 +67,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
