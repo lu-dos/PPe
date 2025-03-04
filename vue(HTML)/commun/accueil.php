@@ -7,7 +7,7 @@
     
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include ('E5_petanque\vue(HTML)\commun\navbar.php'); ?>
     <style>
      
         .video-section {
