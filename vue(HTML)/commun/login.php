@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="rstyle.css">
+    <link rel="stylesheet" type="text/css" href="/E5_petanque/css/rstyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/E5_petanque/include(redondance)/navbar.php'); ?>
 <h1>Connexion</h1>
 <form method="POST" action="login.php">
     Email: <input type="email" name="email" required><br>
@@ -27,7 +27,8 @@
 
 <?php
 session_start();
-include 'db.php';
+//include 'db.php';
+include($_SERVER['DOCUMENT_ROOT'] . '/E5_petanque/modele(SQL)/admin/db.php');
 
 $error_message = '';
 
@@ -57,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $error_message = "Mot de passe invalide.";
             }
-        } else {
+        }
+        else {
             $error_message = "Mail inconnu.";
         }
 

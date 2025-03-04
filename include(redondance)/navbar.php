@@ -6,16 +6,17 @@
             <a href="contact.php">Contacter le Créateur</a>
         <?php endif; ?>
     </div>
-    <?php if (!isset($_SESSION['isClient']) && !isset($_SESSION['isAdmin']) == "0"): ?>
-        <a href="login.php" class="btn-connexion">Se Connecter</a>
-        <a href="inscription.php" class="btn-inscription">S'inscrire</a>
-    <?php else: ?>
-        <form action="deconnexion.php" method="POST" style="display:inline;">
-            <button type="submit" class="logout-button">Se Déconnecter</button>
-        </form>
-    <?php endif; ?>
+    <div>
+        <?php if (!isset($_SESSION['isClient']) && !isset($_SESSION['isAdmin'])): ?>
+            <a href="login.php" class="btn-connexion">Se Connecter</a>
+            <a href="inscription.php" class="btn-inscription">S'inscrire</a>
+        <?php else: ?>
+            <form action="deconnexion.php" method="POST" style="display:inline;">
+                <button type="submit" class="logout-button">Se Déconnecter</button>
+            </form>
+        <?php endif; ?>
+    </div>
 </div>
-
 
 <style>
     body, html {

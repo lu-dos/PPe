@@ -7,9 +7,11 @@
     
 </head>
 <body>
-    <?php include ('E5_petanque\vue(HTML)\commun\navbar.php'); ?>
+    <?php 
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/E5_petanque/include(redondance)/navbar.php');
+    ?>
     <style>
-     
+    
         .video-section {
             text-align: center;
             margin-top: 20px;
