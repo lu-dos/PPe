@@ -8,7 +8,7 @@
 
 -Faire un bouton "réserver" 
 
--Paire une page "réservations" qui montre les réservations des terrains par rapport au compte
+-Faire une page "réservations" qui montre les réservations des terrains par rapport au compte
 
 -Mettre la vidéo en local pour éviter de la perdre si elle se fait ban 
 

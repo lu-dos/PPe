@@ -1,12 +1,12 @@
 <div class="navbar">
     <div class="links">
         <a href="accueil.php">Accueil</a>
-        <?php if (isset($_SESSION['IsClient']) && $_SESSION['IsClient'] == "1" || isset($_SESSION['IsAdmin']) && $_SESSION['IsAdmin'] == "1"): ?>
+        <?php if (isset($_SESSION['isClient']) && $_SESSION['isClient'] == "1" || isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == "1"): ?>
             <a href="reservation.php">Réserver un Terrain</a>
             <a href="contact.php">Contacter le Créateur</a>
         <?php endif; ?>
     </div>
-    <?php if (!isset($_SESSION['IsClient']) && !isset($_SESSION['IsAdmin'])): ?>
+    <?php if (!isset($_SESSION['isClient']) && !isset($_SESSION['isAdmin']) == "0"): ?>
         <a href="login.php" class="btn-connexion">Se Connecter</a>
         <a href="inscription.php" class="btn-inscription">S'inscrire</a>
     <?php else: ?>
@@ -15,6 +15,7 @@
         </form>
     <?php endif; ?>
 </div>
+
 
 <style>
     body, html {
@@ -27,6 +28,7 @@
         padding: 10px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         box-sizing: border-box;
     }
@@ -38,7 +40,7 @@
         margin: 0 15px;
         text-decoration: none;
         font-size: 17px;
-    }   
+    }
     .logout-button {
         background: none;
         border: none;
